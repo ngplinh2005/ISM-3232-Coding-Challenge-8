@@ -23,4 +23,14 @@ class Department {
     getDepartmentSalary() {
       return this.employees.reduce((total, employee) => total + employee.salary, 0)
     }
+    // Task 4: Handle Bonuses for Managers
+    calculateTotalSalaryWithBonus() {
+    return this.employees.reduce((total, employee) => {
+      let salaryWithBonus = employee.salary
+      if (employee instanceof Manager) {
+        salaryWithBonus += employee.bonus
+      }
+      return total + salaryWithBonus
+    }, 0)
+  }
 }
