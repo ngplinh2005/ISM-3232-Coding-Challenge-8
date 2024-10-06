@@ -46,3 +46,34 @@ class Manager extends Employee {
       return `Employee Name: ${this.name}, Position: ${this.position}, Salary: $${this.salary}, Bonus: $${this.bonus}`
     }
   }
+
+// Task 5: Create and Manage Departments and Employees
+
+// Create departments
+const engineering = new Department("Engineering");
+const marketing = new Department("Marketing");
+const sales = new Department("Sales");
+
+// Create employees
+const alex = new Employee("Alex Carter", 82000, "Software Engineer", "Engineering");
+const bella = new Employee("Bella Ross", 72000, "Graphic Designer", "Marketing");
+const charles = new Manager("Charles Black", 125000, "Engineering Manager", "Engineering", 22000);
+const dana = new Manager("Dana White", 135000, "Marketing Manager", "Marketing", 27000);
+const ethan = new Employee("Ethan Hunt", 70000, "Sales Executive", "Sales");
+const fiona = new Manager("Fiona Green", 140000, "Sales Manager", "Sales", 30000);
+
+// Add employees to departments
+engineering.addEmployee(alex);
+engineering.addEmployee(charles);
+marketing.addEmployee(bella);
+marketing.addEmployee(dana);
+sales.addEmployee(ethan);
+sales.addEmployee(fiona);
+
+// Calculate total salary for each department
+console.log(`Total salary for Engineering: $${engineering.getDepartmentSalary()}`);
+console.log(`Total salary with bonuses for Engineering: $${engineering.calculateTotalSalaryWithBonus()}`);
+console.log(`Total salary for Marketing: $${marketing.getDepartmentSalary()}`);
+console.log(`Total salary with bonuses for Marketing: $${marketing.calculateTotalSalaryWithBonus()}`);
+console.log(`Total salary for Sales: $${sales.getDepartmentSalary()}`);
+console.log(`Total salary with bonuses for Sales: $${sales.calculateTotalSalaryWithBonus()}`);
